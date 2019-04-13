@@ -1,6 +1,6 @@
 {
    "start":{
-      "questions":"What do you do with your data?",
+      "questions":"What industry does your company operate in?",
       "choices":[
          {
             "text":"Payments and logging",
@@ -29,7 +29,7 @@
             "final_key": "US_YES_OFFSHORE_ACCOUNTS"
          },
          {
-            "text": "Yes",
+            "text": "No",
             "next_step": "NULL",
             "final_key": "US_NO_OFFSHORE_ACCOUNTS"
          }
