@@ -95,7 +95,6 @@ function render(data) {
 
 function main() {
   clearContent();
-
   DataProvider.getResultData(response => render(response[getParam("key")]));
 }
 
