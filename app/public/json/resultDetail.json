@@ -23,5 +23,15 @@
       "text":"HIPPA Compliant",
       "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
       "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    },
+    "US_YES_OFFSHORE_ACCOUNTS": {
+      "text": "AML Compliance",
+      "content": "Firms must comply with the Bank Secrecy Act and its implementing regulations ("Anti-Money Laundering rules"). The purpose of the AML rules is to help detect and report suspicious activity including the predicate offenses to money laundering and terrorist financing, such as securities fraud and market manipulation.",
+      "video_url": "https://www.youtube.com/embed/257wV-AbKaE"
+    },
+    "US_NO_OFFSHORE_ACCOUNTS": {
+      "text": "AML Compliance",
+      "content": "Firms must comply with the Bank Secrecy Act and its implementing regulations ("Anti-Money Laundering rules"). The purpose of the AML rules is to help detect and report suspicious activity including the predicate offenses to money laundering and terrorist financing, such as securities fraud and market manipulation.",
+      "video_url": "https://www.youtube.com/embed/257wV-AbKaE"
     }
 }
