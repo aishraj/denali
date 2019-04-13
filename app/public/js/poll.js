@@ -16,43 +16,6 @@ const DataProvider = {
 
   getResultData: function(callback){
     $.getJSON("../json/result.json", callback);
-  },
-
-  postData: async function(url = ``, data = {}) {
-  // Default options are marked with *
-    return fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, cors, *same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-            "Content-Type": "application/json",
-            // "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
-        body: JSON.stringify(data), // body data type must match "Content-Type" header
-    })
-    .then(response => response.json()); // parses JSON response into native Javascript objects 
-},
-
-  getListingForId: async function(training_id = 6) {
-    let uri = new URL('http://localhost:3000/training');
-    let params =  {training_id: training_id};
-    Object.keys(params).forEach(key => uri.searchParams.append(key, params[key]));
-    return await fetch(uri).then(response => response.json());
-  },
-
-  createListings: async function(training_id = 6) {
-    let body = {training_id: training_id};
-    return await this.postData('http://localhost:3000/sendinvite', body)
-    .then(data => JSON.stringify(data));
-  },
-
-  updateListing: async function(training_id = 6, user_id = 2, status = 3) {
-    let body = {training_id: training_id, user_id: user_id, status: status};
-    return await this.postData('http://localhost:3000/training', body)
-      .then(data => JSON.stringify(data));
   }
 };
 
@@ -95,7 +58,9 @@ function renderResults(resultData) {
       let isComplete = true;
       _.each(resultList, function(resultKeySubItem){
         if (_.has(resultItem.sub_rules, resultKeySubItem)) {
-          subRules.push(resultItem.sub_rules[resultKeySubItem]);
+          let subRule = resultItem.sub_rules[resultKeySubItem];
+          subRule["key"] = resultKeySubItem;
+          subRules.push(subRule);
           if (resultItem.sub_rules[resultKeySubItem].is_complete == FALSE) {
             isComplete = false;
           }
@@ -110,7 +75,7 @@ function renderResults(resultData) {
     }
   });
   const resultTmpl = _.template($("#resultTemplate").html());
-  $("#mainContainer").html(resultTmpl({"result": finalResults}));
+  $("#mainContainer").html(resultTmpl({"result": finalResults,"employer_id": new Date().getTime()}));
 }
 
 function render(data) {
@@ -119,9 +84,9 @@ function render(data) {
 }
 
 function main() {
-  console.log(DataProvider.getListingForId(6));
   DataProvider.getPollData(render);
 }
 
-
-main();
+$( document ).ready(function() {
+  main();
+});

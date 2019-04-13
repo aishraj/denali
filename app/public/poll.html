@@ -24,7 +24,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://underscorejs.org/underscore-min.js" crossorigin="anonymous"></script>
-    <script src="../js/custom.js"></script>
+    <script src="../js/poll.js"></script>
 
     <script type="text/template" id="pollTemplate">
       <div class="jumbotron">
@@ -50,6 +50,11 @@
             <% for(let j=0; j<result[i].sub_rules.length; j++) { %>
               <div class="alert <% if(result[i].sub_rules[j].is_complete == TRUE) { %>alert-success <% } else { %>alert-danger <% } %>" role="alert">
                 <%-result[i].sub_rules[j].text%>
+                <% if(result[i].sub_rules[j].is_complete == TRUE) { %>
+                  <a class="btn btn-primary resultButton" href="/result.html?key=<%-result[i].sub_rules[j].key%>&employer_id=<%-employer_id%>" role="button">Learn More</a>
+                <% } else { %>
+                  <a class="btn btn-primary resultButton" href="/result.html?key=<%-result[i].sub_rules[j].key%>&employer_id=<%-employer_id%>" role="button">Fix this!</a>
+                <% } %>
               </div>
             <% } %>
           </div>

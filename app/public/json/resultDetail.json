@@ -1,0 +1,27 @@
+{
+   "INDIA_LOCAL": {
+      "text":"Indian Data Privacy Policies",
+      "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
+      "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    },
+    "INDIA_NOT_LOCAL": {
+      "text":"Indian Data Privacy Policies",
+      "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
+      "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    },
+    "EUROPE": {
+      "text":"GDPR",
+      "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
+      "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    },
+    "MEDICAL_INSECURE": {
+      "text":"HIPPA Compliance needed",
+      "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
+      "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    },
+    "MEDICAL_SECURE": {
+      "text":"HIPPA Compliant",
+      "content":"A processor of personal data must clearly disclose any data collection, declare the lawful basis and purpose for data processing, and state how long data is being retained and if it is being shared with any third parties or outside of the EEA. Data subjects have the right to request a portable copy of the data collected by a processor in a common format, and the right to have their data erased under certain circumstances.",
+      "video_url": "https://www.youtube.com/embed/JxZZcc1C_nQ"
+    }
+}
