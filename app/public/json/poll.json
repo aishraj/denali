@@ -1,11 +1,16 @@
 {
    "start":{
-      "questions":"What do you do with your data?",
+      "questions":"What industry does your company operate in?",
       "choices":[
          {
             "text":"Payments and logging",
             "next_step":"country_presence",
             "final_key":"TECH"
+         },
+         {
+            "text": "Capital Markets",
+            "next_step": "offshore_accounts",
+            "final_key": "FINANCE"
          },
          {
             "text":"Other Stuff",
@@ -14,6 +19,22 @@
          }
       ],
       "item_type":"checkbox"
+   },
+   "offshore_accounts": {
+      "questions": "Do you deal with funds outside of the United States",
+      "choices": [
+         {
+            "text": "Yes",
+            "next_step": "NULL",
+            "final_key": "US_YES_OFFSHORE_ACCOUNTS"
+         },
+         {
+            "text": "No",
+            "next_step": "NULL",
+            "final_key": "US_NO_OFFSHORE_ACCOUNTS"
+         }
+      ],
+      "item_type": "radio"
    },
    "country_presence":{
       "questions":"Which countries are you present?",

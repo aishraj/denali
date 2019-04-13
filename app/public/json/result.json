@@ -16,6 +16,19 @@
         }
       }
    },
+   "FINANCE": {
+     "text": "Financial Compliance",
+     "sub_rules": {
+       "US_YES_OFFSHORE_ACCOUNTS": {
+         "text": "Anti Money Laundering Compliance needed",
+         "is_complete": "false"
+       },
+       "US_NO_OFFSHORE_ACCOUNTS": {
+         "text":"Anti Money Laundering Compliance possibly not needed",
+         "is_complete":"true"
+       }
+     }
+   },
    "MEDICAL":{
       "text":"Medical data compliance",
       "sub_rules":{
