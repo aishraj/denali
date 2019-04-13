@@ -1,5 +1,9 @@
 # denali
 
+## Rough demo run
+![](hack_demo.gif)
+
+## Poll and result data format
 poll.json
 ```
 {
@@ -32,6 +36,7 @@ result.json
 }
 ```
 
+## State logic for poll and result generation
 For polling,
 - have a stack and a result list
 - push "start" first to stack
