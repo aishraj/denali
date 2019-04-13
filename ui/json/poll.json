@@ -1,0 +1,82 @@
+{
+   "start":{
+      "questions":"What do you do with your data?",
+      "choices":[
+         {
+            "text":"Payments and logging",
+            "next_step":"country_presence",
+            "final_key":"TECH"
+         },
+         {
+            "text":"Other Stuff",
+            "next_step":"medical_data",
+            "final_key":"NULL"
+         }
+      ],
+      "item_type":"checkbox"
+   },
+   "country_presence":{
+      "questions":"Which countries are you present?",
+      "choices":[
+         {
+            "text":"India",
+            "next_step":"is_india_data_local",
+            "final_key":"NULL"
+         },
+         {
+            "text":"Europe",
+            "next_step":"NULL",
+            "final_key":"EUROPE"
+         }
+      ],
+      "item_type":"checkbox"
+   },
+   "is_india_data_local":{
+      "questions":"Is all your data stored only in India?",
+      "choices":[
+         {
+            "text":"Yes",
+            "next_step":"NULL",
+            "final_key":"INDIA_LOCAL"
+         },
+         {
+            "text":"No",
+            "next_step":"NULL",
+            "final_key":"INDIA_NOT_LOCAL"
+         }
+      ],
+      "item_type":"radio"
+   },
+   "medical_data":{
+      "questions":"Do you store any medical data?",
+      "choices":[
+         {
+            "text":"Yes",
+            "next_step":"med_secure",
+            "final_key":"MEDICAL"
+         },
+         {
+            "text":"No",
+            "next_step":"NULL",
+            "final_key":"NULL"
+         }
+      ],
+      "item_type":"radio"
+   },
+   "med_secure":{
+      "questions":"Is it accessible by your employees?",
+      "choices":[
+         {
+            "text":"Yes",
+            "next_step":"NULL",
+            "final_key":"MEDICAL_INSECURE"
+         },
+         {
+            "text":"No",
+            "next_step":"NULL",
+            "final_key":"MEDICAL_SECURE"
+         }
+      ],
+      "item_type":"radio"
+   }
+}
