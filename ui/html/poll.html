@@ -41,6 +41,22 @@
       </div>
     </script>
 
+    <script type="text/template" id="resultTemplate">
+      <div class="jumbotron">
+        <h1 class="display-4">Your results</h1>
+        <% for(let i=0; i<result.length; i++) { %>
+          <div class="alert <% if(result[i].is_complete) { %>alert-success <% } else { %>alert-danger <% } %>" role="alert">
+            <h4 class="alert-heading"><%-result[i].text%></h4>
+            <% for(let j=0; j<result[i].sub_rules.length; j++) { %>
+              <div class="alert <% if(result[i].sub_rules[j].is_complete == TRUE) { %>alert-success <% } else { %>alert-danger <% } %>" role="alert">
+                <%-result[i].sub_rules[j].text%>
+              </div>
+            <% } %>
+          </div>
+        <% } %>
+      </div>
+    </script>
+
 </body>
 
 </html>

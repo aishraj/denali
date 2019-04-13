@@ -23,14 +23,12 @@ result.json
 {
 	"POLICY_OR_RULE_KEY": {
 		"text": "",
-		"sub_rules": [
-			{
-				"final_key": "POLICY_OR_RULE_KEY",
+		"sub_rules": {
+			"POLICY_OR_RULE_KEY": {
 				"text": "",
 				"is_complete": BOOLEAN,
-			},
-			...
-		],
+			}
+		}
 }
 ```
 

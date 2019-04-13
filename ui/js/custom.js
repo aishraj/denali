@@ -2,8 +2,8 @@
 
 
 const NULL = "NULL";
-const TRUE = "TRUE";
-const FALSE = "FALSE";
+const TRUE = "true";
+const FALSE = "false";
 
 let pollStack = [];
 let resultList = [];
@@ -43,14 +43,36 @@ function attachEvents() {
 
 function renderPollItem(pollKey) {
   const pollItem = pollData[pollKey];
-  let pollTmpl = _.template($("#pollTemplate").html());
+  const pollTmpl = _.template($("#pollTemplate").html());
   $("#mainContainer").html(pollTmpl(pollItem));
   attachEvents();
 }
 
 function renderResults(resultData) {
-  console.log(resultData);
-  console.log(resultList);
+  let finalResults = [];
+  _.each(resultList, function(resultKey){
+    if (_.has(resultData, resultKey)) {
+      let resultItem = resultData[resultKey];
+      let subRules = [];
+      let isComplete = true;
+      _.each(resultList, function(resultKeySubItem){
+        if (_.has(resultItem.sub_rules, resultKeySubItem)) {
+          subRules.push(resultItem.sub_rules[resultKeySubItem]);
+          if (resultItem.sub_rules[resultKeySubItem].is_complete == FALSE) {
+            isComplete = false;
+          }
+        }
+      });
+
+      finalResults.push({
+        "text": resultItem.text,
+        "is_complete": isComplete,
+        "sub_rules": subRules,
+      });
+    }
+  });
+  const resultTmpl = _.template($("#resultTemplate").html());
+  $("#mainContainer").html(resultTmpl({"result": finalResults}));
 }
 
 function render(data) {
