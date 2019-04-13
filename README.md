@@ -1,6 +1,7 @@
 # denali
 
 poll.json
+```
 {
 	"item_name": {
 		questions: "",
@@ -12,12 +13,13 @@ poll.json
 			},
 			...
 		],
-		item_type: RADIO or CHECK
+		item_type: RADIO or CHECKBOX
 	}
 }
+```
 
 result.json
-
+```
 {
 	"POLICY_OR_RULE_KEY": {
 		"text": "",
@@ -30,6 +32,7 @@ result.json
 			...
 		],
 }
+```
 
 For polling,
 - have a stack and a result list
