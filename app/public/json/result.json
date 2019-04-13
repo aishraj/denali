@@ -1,0 +1,32 @@
+{
+   "TECH":{
+      "text":"Data Privacy",
+      "sub_rules":{
+        "INDIA_LOCAL": {
+          "text":"Indian Data Privacy Policies",
+          "is_complete":"true"
+        },
+        "INDIA_NOT_LOCAL": {
+          "text":"Indian Data Privacy Policies",
+          "is_complete":"false"
+        },
+        "EUROPE": {
+          "text":"GDPR",
+          "is_complete":"true"
+        }
+      }
+   },
+   "MEDICAL":{
+      "text":"Medical data compliance",
+      "sub_rules":{
+        "MEDICAL_INSECURE": {
+          "text":"HIPPA Compliance needed",
+          "is_complete":"false"
+        },
+        "MEDICAL_SECURE": {
+          "text":"HIPPA Compliant",
+          "is_complete":"true"
+        }
+      }
+   }
+}

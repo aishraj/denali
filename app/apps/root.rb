@@ -1,8 +1,7 @@
 class RootApp < BaseApp
-  get "/" do
-    json response: {
-      status: :ok
-    }
+
+  get '/' do
+   send_file File.join(settings.public_folder, 'index.html')
   end
 
   get "/training" do
@@ -30,7 +29,7 @@ class RootApp < BaseApp
   end
 
   post '/training' do
-    @user_training = UserTrainingStatus.create user_id: @body[:user_id],
+    @user_training = UserTrainingStatus.create_or_update user_id: @body[:user_id],
                         training_id: @body[:training_id],
                         status: @body[:status]
     if @user_training.valid?
