@@ -5,7 +5,12 @@ const NULL = "NULL";
 const TRUE = "true";
 const FALSE = "false";
 
-const host = "172.20.2.97";
+const host = "localhost";
+
+const status = {
+  INCOMPLETE: 0,
+  COMPLETE: 1,
+};
 
 const DataProvider = {
   getPollData: function(callback){
@@ -65,14 +70,16 @@ function clearContent() {
 
 function renderManageSection() {
   const employee_id = getParam("employee_id");
+  const employer_id = getParam("employer_id");
   if (employee_id == null) {
-    DataProvider.getListingForId(getParam("employer_id")).then(response => {
-      console.log(response);
+    DataProvider.getListingForId(employer_id).then(response => {
       const manageTmpl = _.template($("#manageTemplate").html());
-      $("#mainContainer").append(manageTmpl({"content": "content"}));
+      $("#mainContainer").append(manageTmpl(response["response"]));
     });
-    const manageTmpl = _.template($("#manageTemplate").html());
-    $("#mainContainer").append(manageTmpl({"content": "content"}));
+  } else {
+    DataProvider.updateListing(employer_id, employee_id, status.COMPLETE).then(
+      response => console.log(response)
+    );
   }
 }
 

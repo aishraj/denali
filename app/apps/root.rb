@@ -7,6 +7,7 @@ class RootApp < BaseApp
   get "/training" do
     training_id = params[:training_id].to_i
     @training_statuses = UserTrainingStatus.where(training_id: training_id)
+    puts @training_statuses
     if @training_statuses
       json response: {
         status: :ok,
@@ -32,7 +33,8 @@ class RootApp < BaseApp
   post '/sendinvite' do
     user_ids = 1...10
     @training_statuses = user_ids.map do |user_id|
-      status = UserTrainingStatus.find_or_initialize_by user_id: user_id, training_id: @body[:training_id].to_i, status: 0
+      status = UserTrainingStatus.find_or_initialize_by user_id: user_id, training_id: @body[:training_id].to_i
+      status.status = 0
       status.save
       status
     end
@@ -47,9 +49,9 @@ class RootApp < BaseApp
 
   post '/training' do
     @user_training = UserTrainingStatus.find_or_initialize_by user_id: @body[:user_id],
-                        training_id: @body[:training_id],
-                        status: @body[:status]
+                        training_id: @body[:training_id]
     if @user_training.valid?
+      @user_training.status = @body[:status]
       @user_training.save
       json response: {
         status: :ok,

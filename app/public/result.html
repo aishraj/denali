@@ -37,7 +37,16 @@
     <script type="text/template" id="manageTemplate">
       <div class="jumbotron">
         <h1 class="display-4">Manage employee training</h1>
-        <div><%-content%></div>
+        <% for(let i=0; i<data.length; i++) { %>
+          <p>
+            User ID: <%-data[i].user_id%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <% if(data[i].status == 1) { %>
+              <span class="badge badge-primary">Complete</span>
+            <% } else { %>
+              <span class="badge badge-danger">Incomplete</span>
+            <% } %>  
+          <p>
+        <% } %>
       </div>
     </script>
 
