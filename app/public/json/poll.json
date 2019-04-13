@@ -8,12 +8,33 @@
             "final_key":"TECH"
          },
          {
+            "text": "Capital Markets",
+            "next_step": "offshore_accounts",
+            "final_key": "FINANCE"
+         },
+         {
             "text":"Other Stuff",
             "next_step":"medical_data",
             "final_key":"NULL"
          }
       ],
       "item_type":"checkbox"
+   },
+   "offshore_accounts": {
+      "questions": "Do you deal with funds outside of the United States",
+      "choices": [
+         {
+            "text": "Yes",
+            "next_step": "NULL",
+            "final_key": "US_YES_OFFSHORE_ACCOUNTS"
+         },
+         {
+            "text": "Yes",
+            "next_step": "NULL",
+            "final_key": "US_NO_OFFSHORE_ACCOUNTS"
+         }
+      ],
+      "item_type": "radio"
    },
    "country_presence":{
       "questions":"Which countries are you present?",
